@@ -1,7 +1,7 @@
 .login2(ng-controller='SignInCtrl')
   .login-wrapper
     a(href='./')
-      img(width='160', height='160', src='/static/logo/exports/qbao.png', title='STF')
+      img(width='190', height='90', src='/static/logo/exports/qbao.png', title='STF')
 
     form(name='signin', novalidate, ng-submit='submit()')
       .alert.alert-danger(ng-show='error')
@@ -37,4 +37,5 @@
         .alert.alert-warning(ng-show='signin.passwd.$dirty && signin.passwd.$invalid')
           span(translate) Please enter the correct password
 
-      input.btn.btn-lg.btn-primary.btn-block(type='submit', value='Log In')
+      input.btn.btn-lg.btn-primary.btn-block(type='submit', value='登录')
+      input.btn.btn-lg.btn-success.btn-block(type='button', value='注册',ng-click='toRegiste()')

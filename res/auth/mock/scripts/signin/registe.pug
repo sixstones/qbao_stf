@@ -1,0 +1,49 @@
+.login2(ng-controller='SignInCtrl')
+  .login-wrapper
+    a(href='./')
+      img(width='190', height='90', src='/static/logo/exports/qbao.png', title='STF')
+
+    form(name='signin', novalidate, ng-submit='registe()')
+      .alert.alert-danger(ng-show='error')
+        span(ng-show='error.$invalid') {{ message }}
+        span(ng-show='error.$incorrect', translate) Incorrect login details
+        span(ng-show='error.$server', translate) Server error. Check log output.
+        span(ng-show='error.$authvalid') {{ message }}
+
+      .form-group
+        .input-group
+          span.input-group-addon
+            i.fa.fa-user
+          input.form-control(ng-model='username', name='username', required, type='text', placeholder='用户名',
+          autocorrect='off', autocapitalize='off', spellcheck='false', autocomplete='section-login username')
+        .alert.alert-warning(ng-show='registe.username.$dirty && registe.username.$invalid')
+          span(translate) Please enter your name
+
+      .form-group
+        .input-group
+          span.input-group-addon
+            i.fa.fa-envelope
+          input.form-control(ng-model='email', name='email', required, type='email', placeholder='邮箱',
+          autocorrect='off', autocapitalize='off', spellcheck='false', autocomplete='section-login email')
+        .alert.alert-warning(ng-show='registe.email.$dirty && registe.email.$invalid')
+          span(ng-show='registe.email.$error.email', translate) Please enter a valid email
+          span(ng-show='registe.email.$error.required', translate) Please enter your email
+      .form-group
+        .input-group
+          span.input-group-addon
+            i.fa.fa-lock
+          input.form-control(ng-model='passwd', name='passwd', required, type='password', placeholder='密码',
+          autocorrect='off', autocapitalize='off', spellcheck='false')
+        .alert.alert-warning(ng-show='registe.passwd.$dirty && registe.passwd.$invalid')
+          span(translate) Please enter the correct password
+      .form-group
+        .input-group
+          span.input-group-addon
+            i.fa.fa-lock
+          input.form-control(ng-model='repasswd', name='repasswd', required, type='password', placeholder='确认密码',
+          autocorrect='off', autocapitalize='off', spellcheck='false')
+        .alert.alert-warning(ng-show='registe.repasswd.$dirty && registe.repasswd.$invalid')
+          span(translate) Please enter the correct password
+
+
+      input.btn.btn-lg.btn-primary.btn-block(type='submit', value='注册')
