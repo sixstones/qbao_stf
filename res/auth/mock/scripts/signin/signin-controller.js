@@ -21,7 +21,6 @@ module.exports = function SignInCtrl($scope, $http) {
       .error(function(response) {
         switch (response.error) {
           case 'ValidationError':
-            $scope.message = response.message
             $scope.error = {
               $invalid: true
             }
@@ -29,12 +28,7 @@ module.exports = function SignInCtrl($scope, $http) {
           case 'QbaoError':
             $scope.message = response.message
             $scope.error = {
-              $authvalid: true
-            }
-            break
-          case 'InvalidCredentialsError':
-            $scope.error = {
-              $incorrect: true
+              $qbaoError: true
             }
             break
           default:
@@ -66,13 +60,9 @@ module.exports = function SignInCtrl($scope, $http) {
             }
             break
           case 'QbaoError':
+            $scope.message = response.message
             $scope.error = {
-              $authvalid: true
-            }
-            break
-          case 'InvalidCredentialsError':
-            $scope.error = {
-              $incorrect: true
+              $qbaoError: true
             }
             break
           default:
