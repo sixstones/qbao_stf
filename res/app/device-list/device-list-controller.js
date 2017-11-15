@@ -29,7 +29,7 @@ module.exports = function DeviceListCtrl(
     }
   , {
       name: 'serial'
-    , selected: false
+    , selected: true
     }
   , {
       name: 'operator'
