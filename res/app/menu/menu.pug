@@ -12,6 +12,9 @@
         a(ng-href='/#!/settings')
           span.fa.fa-gears
           span(ng-if='!$root.basicMode', translate) Settings
+        a(ng-if='$root.adminMode', ng-href='/#!/deviceData')
+          span.fa.fa-database
+          span(translate) Device Data
     ul.nav.stf-nav.stf-feedback.pull-right(ng-cloak, nav-menu='current').unselectable
       li.stf-nav-web-native-button(ng-if='!$root.basicMode && isControlRoute')
         .btn-group
@@ -19,6 +22,9 @@
           button(type='button', ng-model='$root.platform', uib-btn-radio="'native'", translate).btn.btn-sm.btn-default-outline Native
 
       li(ng-show='!$root.basicMode')
+        a(ng-href='/#!/user')
+          i.fa.fa-user.fa-fw
+          | {{ "User Profile" | translate }}
         a(ng-href='/app/logout')
           i.fa.fa-sign-out.fa-fw
           | {{ "Logout" | translate }}

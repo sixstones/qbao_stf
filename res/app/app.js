@@ -17,6 +17,7 @@ require.ensure([], function(require) {
     require('./user').name,
     require('./../common/lang').name,
     require('stf/standalone').name
+    // require('./device-data').name
   ])
     .config(function($routeProvider, $locationProvider) {
       $locationProvider.hashPrefix('!')
