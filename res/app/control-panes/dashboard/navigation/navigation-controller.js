@@ -42,6 +42,15 @@ module.exports = function NavigationCtrl($scope, $rootScope) {
     return $scope.control.openBrowser(url, $scope.browser)
   }
 
+  $scope.toInstallQbaoApk = function(){
+    $scope.blurUrl = true
+    $rootScope.screenFocus = true
+
+    var url = addHttp('192.168.132.54:5000/mobildapp')
+    setUrlFavicon(url)
+    return $scope.control.openBrowser(url, $scope.browser)
+  }
+
   function setCurrentBrowser(browser) {
     if (browser && browser.apps) {
       var currentBrowser = {}

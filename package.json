@@ -1,7 +1,7 @@
 {
-  "name": "stf",
-  "version": "3.1.0",
-  "description": "Smartphone Test Farm",
+  "name": "qbao_stf",
+  "version": "1.0.0",
+  "description": "STF BY QBAO",
   "keywords": [
     "adb",
     "android",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/openstf/stf.git"
+    "url": "https://github.com/sixstones/qbao_stf.git"
   },
   "bin": {
     "stf": "./bin/stf"

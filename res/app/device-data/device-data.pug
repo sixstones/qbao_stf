@@ -1,0 +1,10 @@
+table(ng-controller='DeviceDataCtrl',ng-model='device-data').table.table-hover.dataTable.ng-table
+  thead
+    tr
+      th.header.sortable(ng-repeat='column in columns track by column.name')
+        div(ng-bind='column.name | translate',ng-model='column')
+
+  tbody
+    tr(ng-repeat='device in allDevices track by device.model')
+      td(ng-repeat='column in columns track by column.name')
+        div(ng-bind='device[column.name]')

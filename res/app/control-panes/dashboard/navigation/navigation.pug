@@ -25,7 +25,8 @@
           button(ng-click='openURL()', ng-disabled='!textURL', translate).btn.btn-primary-outline Open
 
     .btn-group
-      .btn-group.browser-buttons(ng-click='nav.focusUrl = true')
-        label.btn.btn-default-outline(ng-repeat='browserRadio in device.browser.apps track by browserRadio.id', ng-model='$root.browser', uib-btn-radio='browserRadio',
-        uib-tooltip='{{browserRadio.name}} ({{browserRadio.developer}})')
-          img(ng-src='/static/app/browsers/icon/36x36/{{browserRadio.type}}.png', ng-show='browserRadio.type').browser-icon.pointer
+      .btn-group.browser-buttons
+        button(ng-click='toInstallQbaoApk()').btn.btn-primary-outline 钱宝包管理
+//        label.btn.btn-default-outline(ng-repeat='browserRadio in device.browser.apps track by browserRadio.id', ng-model='$root.browser', uib-btn-radio='browserRadio',
+//        uib-tooltip='{{browserRadio.name}} ({{browserRadio.developer}})')
+//          img(ng-src='/static/app/browsers/icon/36x36/{{browserRadio.type}}.png', ng-show='browserRadio.type').browser-icon.pointer
